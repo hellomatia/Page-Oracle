@@ -1,16 +1,28 @@
-// components/Page.tsx
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 interface PageProps {
-    text: string;
+    content: React.ReactNode;
+    className?: string;
+    isHardPage?: boolean;
+    isTopCover?: boolean;
+    isBottomCover?: boolean;
+    hasBorder?: boolean;
 }
 
-const Page: React.FC<PageProps> = ({ text }) => {
-    return (
-        <div className="page">
-            <p>{text}</p>
-        </div>
-    );
-}
+const Page = forwardRef<HTMLDivElement, PageProps>(
+    ({ content, className = '', isHardPage = false, isTopCover = false, isBottomCover = false, hasBorder = false }, ref) => {
+        const pageClassName = `page ${className} ${isHardPage ? 'hard' : ''} ${
+            isTopCover ? 'page-cover page-cover-top' : ''
+        } ${isBottomCover ? 'page-cover page-cover-bottom' : ''}`;
+
+        return (
+            <div ref={ref} className={pageClassName}>
+                {hasBorder && <div className="top-background"></div>}
+                <div className="page-content">{content}</div>
+                {hasBorder && <div className="bottom-background"></div>}
+            </div>
+        );
+    }
+);
 
 export default Page;
