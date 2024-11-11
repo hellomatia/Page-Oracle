@@ -16,12 +16,6 @@ function Book() {
         }
     };
 
-    // const pageRefs = {
-    //     emptyPages: useRef([]),  // EmptyPage들을 위한 배열 ref
-    //     contentPages: useRef([]), // ContentPage들을 위한 배열 ref
-    //     coverPages: useRef([]),   // CoverPage들을 위한 배열 ref
-    // };
-
     // JSON 데이터 기반으로 페이지 생성 함수
     const createBookPages = () => {
         const pages = [];
@@ -40,8 +34,7 @@ function Book() {
         pages.push(<CoverPage key="cover-bottom" title="끝..." isCoverBottom />);
         console.log(pages);
 
-        // Fragment로 감싸서 반환
-        return <>{pages}</>;
+        return pages;
     };
 
     return (
@@ -59,7 +52,7 @@ function Book() {
                           showCover={true}
                           mobileScrollSupport={false}
                           ref={flipBookRef}>
-                {/*{createBookPages()} /!* 생성한 페이지들 렌더링 *!/*/}
+                {createBookPages()}
             </HTMLFlipBook>
 
             <br />
