@@ -10,9 +10,14 @@ function Book() {
     const totalPages = bookData.length * 2; // 총 페이지 수
 
     const goToRandomPage = () => {
-        const randomPage = Math.floor(Math.random() * totalPages); // 랜덤 페이지 계산
+        // 커버 페이지를 제외한 범위에서 랜덤 페이지를 선택
+        const randomPage = Math.floor(Math.random() * (totalPages - 2)) + 1; // 첫 커버 페이지 제외
         if (flipBookRef.current) {
-            flipBookRef.current.pageFlip().flip(randomPage); // 랜덤 페이지로 이동
+            // 먼저 커버 페이지로 이동 후 랜덤 페이지로 이동
+            flipBookRef.current.pageFlip().flip(0); // 첫 번째 커버 페이지로 이동
+            setTimeout(() => {
+                flipBookRef.current.pageFlip().flip(randomPage); // 랜덤 페이지로 이동
+            }, 1200); // 약간의 딜레이 추가
         }
     };
 
