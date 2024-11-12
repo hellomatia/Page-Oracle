@@ -11,7 +11,7 @@ function Book() {
 
     const goToRandomPage = () => {
         // 커버 페이지를 제외한 범위에서 랜덤 페이지를 선택
-        const randomPage = Math.floor(Math.random() * (totalPages - 2)) + 1; // 첫 커버 페이지 제외
+        const randomPage = Math.floor(Math.random() * ((totalPages - 2) / 2)) * 2 + 2; // 짝수 페이지만 선택
         if (flipBookRef.current) {
             // 먼저 커버 페이지로 이동 후 랜덤 페이지로 이동
             flipBookRef.current.pageFlip().flip(0); // 첫 번째 커버 페이지로 이동
