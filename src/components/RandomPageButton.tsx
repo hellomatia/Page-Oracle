@@ -6,7 +6,7 @@ interface RandomPageButtonProps {
 
 const RandomPageButton: React.FC<RandomPageButtonProps> = ({ onClick }) => {
     return (
-        <button onClick={onClick}>Go to Random Page</button>
+        <button className={'btn'} onClick={onClick}>답을 알려주세요~~</button>
     );
 };
 
