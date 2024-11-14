@@ -24,7 +24,6 @@ function Book() {
     // JSON 데이터 기반으로 페이지 생성 함수
     const createBookPages = () => {
         const pages = [];
-        console.log("Creating pages...");
 
         // CoverPage 추가
         pages.push(<CoverPage key="cover-top" title="책님..." isCoverTop />);
@@ -37,28 +36,29 @@ function Book() {
 
         // 마지막 CoverPage 추가
         pages.push(<CoverPage key="cover-bottom" title="끝..." isCoverBottom />);
-        console.log(pages);
 
         return pages;
     };
 
     return (
         <div className={"container"}>
-            <HTMLFlipBook className="flip-book"
-                          autoSize={true}
-                          width={550}
-                          height={733}
-                          size={"stretch"}
-                          minWidth={315}
-                          maxWidth={1000}
-                          minHeight={420}
-                          maxHeight={1350}
-                          maxShadowOpacity={0.5}
-                          showCover={true}
-                          mobileScrollSupport={false}
-                          ref={flipBookRef}>
+            <div className="bookContainer">
+                <HTMLFlipBook className="flip-book"
+                              autoSize={true}
+                              width={400}
+                              height={535}
+                              size={"stretch"}
+                              minWidth={315}
+                              maxWidth={500}
+                              minHeight={420}
+                              maxHeight={600}
+                              maxShadowOpacity={0.5}
+                              showCover={true}
+                              mobileScrollSupport={false}
+                              ref={flipBookRef}>
                 {createBookPages()}
-            </HTMLFlipBook>
+            </HTMLFlipBook></div>
+
 
             <br />
             <br />

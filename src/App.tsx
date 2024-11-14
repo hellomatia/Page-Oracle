@@ -5,7 +5,7 @@ import Book from './components/Book';
 const App: React.FC = () => {
     return (
         <div>
-            <h1>Ask Anything</h1>
+            <div className={'titleContainer'}><h1>Ask Anything</h1></div>
             <Book/>
         </div>
     );
