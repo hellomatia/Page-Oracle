@@ -110,14 +110,21 @@ body::before {
 
 .page.page-cover {
     background-color: hsl(35, 45%, 80%);
+    background-image: url('src/assets/bookCover.jpg');
     color: hsl(35, 35%, 35%);
     border: solid 1px hsl(35, 20%, 50%);
 }
 
 .page.page-cover h2 {
     text-align: center;
-    padding-top: 50%;
+    padding-top: 70%;
     font-size: 210%;
+    color: #ececec;
+    text-shadow:
+            -1px -1px 0 black,
+            1px -1px 0 black,
+            -1px 1px 0 black,
+            1px 1px 0 black; /* 경계선 색상 */
 }
 
 .page.page-cover.page-cover-top {
