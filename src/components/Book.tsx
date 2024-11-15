@@ -12,12 +12,22 @@ function Book() {
     const goToRandomPage = () => {
         // 커버 페이지를 제외한 범위에서 랜덤 페이지를 선택
         const randomPage = Math.floor(Math.random() * ((totalPages - 2) / 2)) * 2 + 2; // 짝수 페이지만 선택
-        if (flipBookRef.current) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
+        if (flipBookRef.current.pageFlip().getCurrentPageIndex() != 0) {
             // 먼저 커버 페이지로 이동 후 랜덤 페이지로 이동
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-expect-error
             flipBookRef.current.pageFlip().flip(0); // 첫 번째 커버 페이지로 이동
             setTimeout(() => {
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-expect-error
                 flipBookRef.current.pageFlip().flip(randomPage); // 랜덤 페이지로 이동
-            }, 1200); // 약간의 딜레이 추가
+            }, 1100); // 약간의 딜레이 추가
+        } else {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-expect-error
+            flipBookRef.current.pageFlip().flip(randomPage); // 랜덤 페이지로 이동
         }
     };
 
