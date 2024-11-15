@@ -18,6 +18,7 @@ const Page = forwardRef<HTMLDivElement, PageProps>(
         return (
             <div ref={ref} className={pageClassName}>
                 {hasBorder && <div className="top-background"></div>}
+                {isTopCover && <div className="golden-frame"></div>}
                 <div className="page-content">{content}</div>
                 {hasBorder && <div className="bottom-background"></div>}
             </div>
