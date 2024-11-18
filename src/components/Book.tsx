@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import RandomPageButton from './RandomPageButton'; // 랜덤 페이지 버튼 임포트
 import { EmptyPage, ContentPage, CoverPage } from './PageComponents'; // 컴포넌트 임포트
@@ -65,7 +65,19 @@ function Book() {
                               maxShadowOpacity={0.5}
                               showCover={true}
                               mobileScrollSupport={false}
-                              ref={flipBookRef}>
+                              ref={flipBookRef}
+                              clickEventForward={true}
+                              disableFlipByClick={true}
+                              drawShadow={true}
+                              flippingTime={1000}
+                              showPageCorners={true}
+                              startPage={0}
+                              startZIndex={0}
+                              style={{}}
+                              swipeDistance={0}
+                              useMouseEvents={true}
+                              usePortrait={false}
+                    >
                 {createBookPages()}
             </HTMLFlipBook></div>
 
