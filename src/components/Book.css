@@ -1,6 +1,6 @@
 body {
     overflow: hidden;
-    background-image: url('src/assets/background.jpg'); /* 이미지 경로를 실제 파일 경로로 변경 */
+    background-image: url('../assets/background.jpg'); /* 이미지 경로를 실제 파일 경로로 변경 */
     background-size: cover; /* 화면 크기에 맞게 이미지 크기 조정 */
     background-repeat: no-repeat; /* 이미지 반복 방지 */
     background-position: center; /* 이미지 가운데 정렬 */
@@ -43,14 +43,14 @@ body::before {
 }
 
 .top-background {
-    background-image: url('public/border.png');
+    background-image: url('/border.png');
     margin-bottom: 10px;
     margin-top: 50px;
     position: absolute;
 }
 
 .bottom-background {
-    background-image: url('public/border.png');
+    background-image: url('/border.png');
     margin-top: 10px;
     margin-bottom: 50px;
     transform: scaleY(-1);
@@ -128,7 +128,7 @@ body::before {
     flex-direction: column;
     box-sizing: border-box;
 
-    background-image: url('src/assets/vintageBackground.png');
+    background-image: url('../assets/vintageBackground.png');
     background-size: 100% 100%; /* 요소의 너비와 높이에 맞게 이미지 크기 조정 */
     background-position: center;
     background-repeat: no-repeat;
@@ -169,7 +169,7 @@ body::before {
 
 .page.page-cover {
     background-color: hsl(35, 45%, 80%);
-    background-image: url('src/assets/bookCover.jpg');
+    background-image: url('../assets/bookCover.jpg');
     color: hsl(35, 35%, 35%);
     border: solid 1px hsl(35, 20%, 50%);
 }
@@ -255,7 +255,7 @@ body::before {
 
 @font-face {
     font-family: 'Cafe24Classictype';
-    src: url('src/assets/Cafe24Classictype-v1.1.woff') format('woff');
+    src: url('../assets/Cafe24Classictype-v1.1.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
